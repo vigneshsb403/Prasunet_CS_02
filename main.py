@@ -49,8 +49,7 @@ if __name__ == "__main__":
 
     img = Image.open(input_image_path)
     width, height = img.size
-    key = np.random.randint(0, 256, (height, width, 3), dtype=np.uint8)
-
+    key = np.full(img_array.shape, 255, dtype=np.uint8)
     if mode == 'encrypt':
         encrypt_image(input_image_path, output_image_path, key)
     elif mode == 'decrypt':
